@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python函数定义模拟器 - 中学信息技术课堂</title>
+    <link rel="stylesheet" href="/python-function-simulator/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <div class="logo-text">
+                        <h1>Python函数定义模拟器</h1>
+                        <div class="subtitle">中学信息技术课堂 - 函数章节学习工具</div>
+                    </div>
+                </div>
+                <div class="grade-badge">七年级 第1课时</div>
+            </div>
+        </header>
+        
+        <div class="instructions">
+            <h2><i class="fas fa-info-circle"></i> 使用说明</h2>
+            <p>在下方代码编辑区编写Python函数定义，点击"检查语法"按钮验证代码正确性。</p>
+            <ul>
+                <li>函数定义以 <code>def</code> 关键字开头</li>
+                <li>函数名由字母、数字和下划线组成，不能以数字开头</li>
+                <li>参数放在括号内，多个参数用逗号分隔</li>
+                <li>函数头以冒号 <code>:</code> 结束</li>
+                <li>函数体需要缩进（4个空格）</li>
+                <li>可以使用 <code>pass</code> 作为占位符</li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="editor-section">
+                <h2><i class="fas fa-edit"></i> 代码编辑器</h2>
+                <div class="code-editor">
+                    <div class="code-header">
+                        <span>function_simulator.py</span>
+                        <span><i class="fas fa-terminal"></i> Python 3.11</span>
+                    </div>
+                    <textarea id="code-input" class="code-area" placeholder="在这里编写函数定义...">def 函数名称(参数1, 参数2):
+    # 在此处编写函数体
+    # 可以使用 return 返回结果
+    pass</textarea>
+                </div>
+                
+                <div class="btn-group">
+                    <button id="check-btn" class="btn btn-check">
+                        <i class="fas fa-check-circle"></i> 检查语法
+                    </button>
+                    <button id="reset-btn" class="btn btn-reset">
+                        <i class="fas fa-redo-alt"></i> 重置代码
+                    </button>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <h2><i class="fas fa-comment-dots"></i> 语法反馈</h2>
+                <div class="feedback-box">
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>正在加载Python环境...</p>
+                    </div>
+                    <div id="feedback-content" class="feedback-content">
+                        <div class="status">
+                            <i class="fas fa-arrow-circle-left" style="font-size: 2rem; color: #90a4ae;"></i>
+                            <p>请编写代码后点击"检查语法"按钮</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="examples">
+            <h2><i class="fas fa-lightbulb"></i> 示例与常见错误</h2>
+            <div class="example-grid">
+                <div class="example-card">
+                    <div class="example-title">正确示例</div>
+                    <div class="example-code">def calculate_sum(a, b):
+    return a + b</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">缺少冒号</div>
+                    <div class="example-code">def greet(name)  # 错误：缺少冒号
+    print("Hello", name)</div>
+                    <div class="example-error">错误提示: 第1行语法错误，缺少冒号(:)</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">缩进错误</div>
+                    <div class="example-code">def print_message():
+print("Hello World!")  # 错误：缺少缩进</div>
+                    <div class="example-error">错误提示: 第2行缩进错误</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">无效函数名</div>
+                    <div class="example-code">def 2times(x):  # 错误：以数字开头
+    return 2 * x</div>
+                    <div class="example-error">错误提示: 无效的函数名 '2times'</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 中学信息技术教研组 | Python函数定义模拟器 v1.0</p>
+            <p>本工具使用HTML5技术构建，无需后端服务器支持</p>
+        </footer>
+    </div>
+    
+    <!-- 引入Pyodide库 -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="/python-function-simulator/script.js"></script>
+</body>
+</html>
